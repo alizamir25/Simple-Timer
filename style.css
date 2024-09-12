@@ -5,7 +5,6 @@ html {
   height: 100%;
   overflow: hidden;
 }
-
 #video-background {
   position: fixed;
   right: 0;
@@ -19,7 +18,6 @@ html {
   filter: blur(5px);
   transform: scale(1.1);
 }
-
 .overlay {
   position: fixed;
   top: 0;
@@ -29,7 +27,6 @@ html {
   background-color: rgba(0, 0, 0, 0.3);
   z-index: -999;
 }
-
 body {
   color: #fff;
   font-family: "Rubik", sans-serif;
@@ -38,7 +35,6 @@ body {
   align-items: center;
   height: 95vh;
 }
-
 .main-container {
   display: flex;
   flex-direction: column;
@@ -50,13 +46,11 @@ body {
   transform: translateY(7px) scale(1);
   transition: transform 0.3s ease;
 }
-
 .countdown-container {
   position: relative;
   width: 100%;
   padding-bottom: 100%;
 }
-
 .countdown-svg {
   position: absolute;
   top: 0;
@@ -65,14 +59,12 @@ body {
   height: 100%;
   transform: rotate(-90deg);
 }
-
 .countdown-circle {
   fill: none;
   stroke: url(#calm-gradient);
   stroke-width: 10;
   stroke-linecap: round;
 }
-
 .countdown-text {
   position: absolute;
   top: 50%;
@@ -82,13 +74,11 @@ body {
   font-family: "Orbitron", sans-serif;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
-
 .countdown-input-wrapper {
   position: relative;
   width: 100%;
   margin-top: 20px;
 }
-
 .countdown-input {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
@@ -100,17 +90,14 @@ body {
   font-size: 1em;
   box-sizing: border-box;
 }
-
 .countdown-input::-webkit-inner-spin-button,
 .countdown-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 .countdown-input[type="number"] {
   -moz-appearance: textfield;
 }
-
 .input-arrows {
   position: absolute;
   right: 10px;
@@ -121,21 +108,18 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 .input-arrows i {
   color: #fff;
   font-size: 12px;
   cursor: pointer;
   margin: 0px 0;
 }
-
 .button-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
 }
-
 .countdown-button {
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid #fff;
@@ -152,48 +136,39 @@ body {
   width: 48%;
   position: relative;
 }
-
 .countdown-button:hover {
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
-
 .countdown-button i {
   margin-right: 5px;
   transition: transform 0.5s;
 }
-
 .countdown-button i.flipped {
   transform: rotate(180deg);
 }
-
 .season-icons {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
 }
-
 .season-icon {
   font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .season-icon.active {
   color: inherit;
 }
-
 @keyframes moveGradient {
   0% {
     stroke-dashoffset: 0;
   }
-
   100% {
     stroke-dashoffset: -283;
   }
 }
-
 .tooltip {
   visibility: hidden;
   width: 120px;
@@ -210,7 +185,6 @@ body {
   opacity: 0;
   transition: opacity 0.3s;
 }
-
 .tooltip::after {
   content: "";
   position: absolute;
@@ -221,7 +195,6 @@ body {
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
 }
-
 .countdown-button:hover .tooltip {
   visibility: visible;
   opacity: 1;
