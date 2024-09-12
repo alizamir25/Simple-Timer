@@ -10,7 +10,7 @@ const stopIcon = document.getElementById("stopIcon");
 const circumference = 2 * Math.PI * 45;
 const videoBackground = document.getElementById("video-background");
 const mainContainer = document.getElementById("mainContainer");
-const seasonVideos = {
+const seasonVideos ={
   winter:
     "https://video.wixstatic.com/video/60eca0_29ea780c363b43888e81b9e09f0cc3cc/1080p/mp4/file.mp4",
   spring:
@@ -20,13 +20,13 @@ const seasonVideos = {
   fall:
     "https://video.wixstatic.com/video/60eca0_ed5232fb25d54c45ba71de8557fafb3c/1080p/mp4/file.mp4"
 };
-const seasonColors = {
+const seasonColors ={
   winter: ["#e0f7fa", "#b2ebf2", "#80deea"], 
   spring: ["#ADD8E6", "#FFFACD", "#FFB6C1"], 
   summer: ["#FF4500", "#FF7F50", "#FFD700"], 
   fall: ["#A0522D", "#D2691E", "#FF8C00"] 
 };
-function changeSeason(season) {
+function changeSeason(season){
   videoBackground.src = seasonVideos[season];
   videoBackground.load();
   const gradient = document.getElementById("calm-gradient");
@@ -37,7 +37,7 @@ function changeSeason(season) {
   `;
   const countdownInput = document.querySelector(".countdown-input");
   countdownInput.style.borderColor = seasonColors[season][2];
-  document.querySelectorAll(".season-icon").forEach((icon) => {
+  document.querySelectorAll(".season-icon").forEach((icon) =>{
     icon.classList.remove("active");
     icon.style.color = "";
   });
@@ -45,21 +45,21 @@ function changeSeason(season) {
   activeIcon.classList.add("active");
   activeIcon.style.color = seasonColors[season][2];
 }
-function startCountdown() {
+function startCountdown(){
   const duration = parseInt(timeInput.value);
-  if (isNaN(duration) || duration <= 0) {
-    if (!timeInput.value.trim()) {
+  if (isNaN(duration) || duration <= 0){
+    if (!timeInput.value.trim()){
       showTooltip();
     }
     return;
   }
-  if (!isRunning) {
+  if (!isRunning){
     isRunning = true;
     let timeLeft = duration;
     updateCountdown(timeLeft, duration);
-    countdownInterval = setInterval(() => {
+    countdownInterval = setInterval(() =>{
       timeLeft--;
-      if (timeLeft < 0) {
+      if (timeLeft < 0){
         stopCountdown();
         return;
       }
@@ -73,8 +73,8 @@ function startCountdown() {
     startIcon.classList.add("flipped");
   }
 }
-function stopCountdown() {
-  if (isRunning) {
+function stopCountdown(){
+  if (isRunning){
     clearInterval(countdownInterval);
     isRunning = false;
     countdownCircle.style.animationPlayState = "paused";
@@ -85,7 +85,7 @@ function stopCountdown() {
     startIcon.classList.remove("flipped");
   }
 }
-function updateCountdown(timeLeft, duration) {
+function updateCountdown(timeLeft, duration){
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
   countdownText.textContent = `${minutes
@@ -95,29 +95,29 @@ function updateCountdown(timeLeft, duration) {
   const dashoffset = circumference * (1 - progress);
   countdownCircle.style.strokeDashoffset = dashoffset;
 }
-function incrementTime() {
+function incrementTime(){
   timeInput.value = (parseInt(timeInput.value) || 0) + 1;
 }
-function decrementTime() {
+function decrementTime(){
   timeInput.value = Math.max((parseInt(timeInput.value) || 0) - 1, 1);
 }
-function showTooltip() {
+function showTooltip(){
   const tooltip = startButton.querySelector(".tooltip");
   tooltip.style.visibility = "visible";
   tooltip.style.opacity = "1";
-  setTimeout(() => {
+  setTimeout(() =>{
     tooltip.style.visibility = "hidden";
     tooltip.style.opacity = "0";
   }, 2000);
 }
-timeInput.addEventListener("input", () => {
+timeInput.addEventListener("input", () =>{
   if (timeInput.value.trim()) {
     startButton.querySelector(".tooltip").style.display = "none";
-  } else {
+  } else{
     startButton.querySelector(".tooltip").style.display = "block";
   }
 });
 changeSeason("winter");
-function resizeContainer(scale) {
+function resizeContainer(scale){
   mainContainer.style.transform = `scale(${scale})`;
 }
