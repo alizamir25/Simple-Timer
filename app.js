@@ -26,7 +26,6 @@ const seasonColors = {
   summer: ["#FF4500", "#FF7F50", "#FFD700"], // Orange Red, Coral, Gold
   fall: ["#A0522D", "#D2691E", "#FF8C00"] // Sienna, Chocolate, Dark Orange
 };
-
 function changeSeason(season) {
   // Update background video
   videoBackground.src = seasonVideos[season];
@@ -51,7 +50,6 @@ function changeSeason(season) {
   activeIcon.classList.add("active");
   activeIcon.style.color = seasonColors[season][2]; // Set color to match the season's palette
 }
-
 function startCountdown() {
   const duration = parseInt(timeInput.value);
   if (isNaN(duration) || duration <= 0) {
@@ -80,7 +78,6 @@ function startCountdown() {
     startIcon.classList.add("flipped");
   }
 }
-
 function stopCountdown() {
   if (isRunning) {
     clearInterval(countdownInterval);
@@ -93,7 +90,6 @@ function stopCountdown() {
     startIcon.classList.remove("flipped");
   }
 }
-
 function updateCountdown(timeLeft, duration) {
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
@@ -104,15 +100,12 @@ function updateCountdown(timeLeft, duration) {
   const dashoffset = circumference * (1 - progress);
   countdownCircle.style.strokeDashoffset = dashoffset;
 }
-
 function incrementTime() {
   timeInput.value = (parseInt(timeInput.value) || 0) + 1;
 }
-
 function decrementTime() {
   timeInput.value = Math.max((parseInt(timeInput.value) || 0) - 1, 1);
 }
-
 function showTooltip() {
   const tooltip = startButton.querySelector(".tooltip");
   tooltip.style.visibility = "visible";
@@ -122,7 +115,6 @@ function showTooltip() {
     tooltip.style.opacity = "0";
   }, 2000);
 }
-
 timeInput.addEventListener("input", () => {
   if (timeInput.value.trim()) {
     startButton.querySelector(".tooltip").style.display = "none";
@@ -130,10 +122,8 @@ timeInput.addEventListener("input", () => {
     startButton.querySelector(".tooltip").style.display = "block";
   }
 });
-
 // Initialize with fall season
 changeSeason("winter");
-
 // Function to resize the entire main container
 function resizeContainer(scale) {
   mainContainer.style.transform = `scale(${scale})`;
