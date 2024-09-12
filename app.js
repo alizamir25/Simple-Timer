@@ -21,34 +21,29 @@ const seasonVideos = {
     "https://video.wixstatic.com/video/60eca0_ed5232fb25d54c45ba71de8557fafb3c/1080p/mp4/file.mp4"
 };
 const seasonColors = {
-  winter: ["#e0f7fa", "#b2ebf2", "#80deea"], // Ice Blue, Light Cyan, and Light Sky Blue
-  spring: ["#ADD8E6", "#FFFACD", "#FFB6C1"], // Light Blue, Lemon Chiffon (Soft Yellow), Light Pink
-  summer: ["#FF4500", "#FF7F50", "#FFD700"], // Orange Red, Coral, Gold
-  fall: ["#A0522D", "#D2691E", "#FF8C00"] // Sienna, Chocolate, Dark Orange
+  winter: ["#e0f7fa", "#b2ebf2", "#80deea"], 
+  spring: ["#ADD8E6", "#FFFACD", "#FFB6C1"], 
+  summer: ["#FF4500", "#FF7F50", "#FFD700"], 
+  fall: ["#A0522D", "#D2691E", "#FF8C00"] 
 };
 function changeSeason(season) {
-  // Update background video
   videoBackground.src = seasonVideos[season];
   videoBackground.load();
-  // Update the entire gradient with the seasonal colors
   const gradient = document.getElementById("calm-gradient");
   gradient.innerHTML = `
     <stop offset="0%" style="stop-color:${seasonColors[season][0]}" />
     <stop offset="50%" style="stop-color:${seasonColors[season][1]}" />
     <stop offset="100%" style="stop-color:${seasonColors[season][2]}" />
   `;
-  // Change countdown input border color
   const countdownInput = document.querySelector(".countdown-input");
   countdownInput.style.borderColor = seasonColors[season][2];
-  // Reset all icons to default color
   document.querySelectorAll(".season-icon").forEach((icon) => {
     icon.classList.remove("active");
     icon.style.color = "";
   });
-  // Set active color to the selected season's icon
   const activeIcon = document.getElementById(`${season}Icon`);
   activeIcon.classList.add("active");
-  activeIcon.style.color = seasonColors[season][2]; // Set color to match the season's palette
+  activeIcon.style.color = seasonColors[season][2];
 }
 function startCountdown() {
   const duration = parseInt(timeInput.value);
@@ -122,9 +117,7 @@ timeInput.addEventListener("input", () => {
     startButton.querySelector(".tooltip").style.display = "block";
   }
 });
-// Initialize with fall season
 changeSeason("winter");
-// Function to resize the entire main container
 function resizeContainer(scale) {
   mainContainer.style.transform = `scale(${scale})`;
 }
