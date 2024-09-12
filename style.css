@@ -1,11 +1,11 @@
 body,
-html {
+html{
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
 }
-#video-background {
+#video-background{
   position: fixed;
   right: 0;
   bottom: 0;
@@ -18,7 +18,7 @@ html {
   filter: blur(5px);
   transform: scale(1.1);
 }
-.overlay {
+.overlay{
   position: fixed;
   top: 0;
   left: 0;
@@ -27,7 +27,7 @@ html {
   background-color: rgba(0, 0, 0, 0.3);
   z-index: -999;
 }
-body {
+body{
   color: #fff;
   font-family: "Rubik", sans-serif;
   display: flex;
@@ -35,7 +35,7 @@ body {
   align-items: center;
   height: 95vh;
 }
-.main-container {
+.main-container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,12 +46,12 @@ body {
   transform: translateY(7px) scale(1);
   transition: transform 0.3s ease;
 }
-.countdown-container {
+.countdown-container{
   position: relative;
   width: 100%;
   padding-bottom: 100%;
 }
-.countdown-svg {
+.countdown-svg{
   position: absolute;
   top: 0;
   left: 0;
@@ -59,13 +59,13 @@ body {
   height: 100%;
   transform: rotate(-90deg);
 }
-.countdown-circle {
+.countdown-circle{
   fill: none;
   stroke: url(#calm-gradient);
   stroke-width: 10;
   stroke-linecap: round;
 }
-.countdown-text {
+.countdown-text{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -74,12 +74,12 @@ body {
   font-family: "Orbitron", sans-serif;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
-.countdown-input-wrapper {
+.countdown-input-wrapper{
   position: relative;
   width: 100%;
   margin-top: 20px;
 }
-.countdown-input {
+.countdown-input{
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid #ff69b4;
@@ -91,14 +91,14 @@ body {
   box-sizing: border-box;
 }
 .countdown-input::-webkit-inner-spin-button,
-.countdown-input::-webkit-outer-spin-button {
+.countdown-input::-webkit-outer-spin-button{
   -webkit-appearance: none;
   margin: 0;
 }
-.countdown-input[type="number"] {
+.countdown-input[type="number"]{
   -moz-appearance: textfield;
 }
-.input-arrows {
+.input-arrows{
   position: absolute;
   right: 10px;
   top: 50%;
@@ -108,19 +108,19 @@ body {
   align-items: center;
   justify-content: center;
 }
-.input-arrows i {
+.input-arrows i{
   color: #fff;
   font-size: 12px;
   cursor: pointer;
   margin: 0px 0;
 }
-.button-container {
+.button-container{
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
 }
-.countdown-button {
+.countdown-button{
   background-color: rgba(0, 0, 0, 0.5);
   border: 2px solid #fff;
   color: #fff;
@@ -136,32 +136,32 @@ body {
   width: 48%;
   position: relative;
 }
-.countdown-button:hover {
+.countdown-button:hover{
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
-.countdown-button i {
+.countdown-button i{
   margin-right: 5px;
   transition: transform 0.5s;
 }
-.countdown-button i.flipped {
+.countdown-button i.flipped{
   transform: rotate(180deg);
 }
-.season-icons {
+.season-icons{
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 20px;
 }
-.season-icon {
+.season-icon{
   font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.season-icon.active {
+.season-icon.active{
   color: inherit;
 }
-@keyframes moveGradient {
+@keyframes moveGradient{
   0% {
     stroke-dashoffset: 0;
   }
@@ -169,7 +169,7 @@ body {
     stroke-dashoffset: -283;
   }
 }
-.tooltip {
+.tooltip{
   visibility: hidden;
   width: 120px;
   background-color: rgba(0, 0, 0, 0.8);
@@ -185,7 +185,7 @@ body {
   opacity: 0;
   transition: opacity 0.3s;
 }
-.tooltip::after {
+.tooltip::after{
   content: "";
   position: absolute;
   top: 100%;
@@ -195,7 +195,7 @@ body {
   border-style: solid;
   border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
 }
-.countdown-button:hover .tooltip {
+.countdown-button:hover .tooltip{
   visibility: visible;
   opacity: 1;
 }
