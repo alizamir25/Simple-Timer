@@ -76,24 +76,24 @@ function startCountdown(){
 function stopCountdown(){
   if (isRunning){
     clearInterval(countdownInterval);
-    isRunning = false;
+    isRunning=false;
     countdownCircle.style.animationPlayState = "paused";
-    startButton.disabled = false;
-    stopButton.disabled = true;
-    timeInput.disabled = false;
+    startButton.disabled=false;
+    stopButton.disabled=true;
+    timeInput.disabled=false;
     stopIcon.classList.add("flipped");
     startIcon.classList.remove("flipped");
   }
 }
 function updateCountdown(timeLeft, duration){
-  const minutes = Math.floor(timeLeft / 60);
-  const seconds = timeLeft % 60;
-  countdownText.textContent = `${minutes
+  const minutes=Math.floor(timeLeft/60);
+  const seconds=timeLeft%60;
+  countdownText.textContent=`${minutes
     .toString()
     .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-  const progress = (duration - timeLeft) / duration;
-  const dashoffset = circumference * (1 - progress);
-  countdownCircle.style.strokeDashoffset = dashoffset;
+  const progress=(duration-timeLeft)/duration;
+  const dashoffset=circumference*(1-progress);
+  countdownCircle.style.strokeDashoffset=dashoffset;
 }
 function incrementTime(){
   timeInput.value = (parseInt(timeInput.value) || 0) + 1;
