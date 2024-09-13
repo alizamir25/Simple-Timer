@@ -20,17 +20,17 @@ const seasonVideos={
   fall:
     "https://video.wixstatic.com/video/60eca0_ed5232fb25d54c45ba71de8557fafb3c/1080p/mp4/file.mp4"
 };
-const seasonColors ={
+const seasonColors={
   winter: ["#e0f7fa", "#b2ebf2", "#80deea"], 
   spring: ["#ADD8E6", "#FFFACD", "#FFB6C1"], 
   summer: ["#FF4500", "#FF7F50", "#FFD700"], 
   fall: ["#A0522D", "#D2691E", "#FF8C00"] 
 };
 function changeSeason(season){
-  videoBackground.src = seasonVideos[season];
+  videoBackground.src=seasonVideos[season];
   videoBackground.load();
-  const gradient = document.getElementById("calm-gradient");
-  gradient.innerHTML = `
+  const gradient=document.getElementById("calm-gradient");
+  gradient.innerHTML=`
     <stop offset="0%" style="stop-color:${seasonColors[season][0]}" />
     <stop offset="50%" style="stop-color:${seasonColors[season][1]}" />
     <stop offset="100%" style="stop-color:${seasonColors[season][2]}" />
