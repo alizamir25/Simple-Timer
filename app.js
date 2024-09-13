@@ -35,11 +35,11 @@ function changeSeason(season){
     <stop offset="50%" style="stop-color:${seasonColors[season][1]}" />
     <stop offset="100%" style="stop-color:${seasonColors[season][2]}" />
   `;
-  const countdownInput = document.querySelector(".countdown-input");
-  countdownInput.style.borderColor = seasonColors[season][2];
-  document.querySelectorAll(".season-icon").forEach((icon) =>{
+  const countdownInput=document.querySelector(".countdown-input");
+  countdownInput.style.borderColor=seasonColors[season][2];
+  document.querySelectorAll(".season-icon").forEach((icon)=>{
     icon.classList.remove("active");
-    icon.style.color = "";
+    icon.style.color="";
   });
   const activeIcon = document.getElementById(`${season}Icon`);
   activeIcon.classList.add("active");
