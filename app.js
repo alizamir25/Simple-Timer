@@ -1,16 +1,16 @@
 let countdownInterval;
-let isRunning = false;
-const countdownCircle = document.querySelector(".countdown-circle");
-const countdownText = document.getElementById("countdown");
-const timeInput = document.getElementById("timeInput");
-const startButton = document.getElementById("startButton");
-const stopButton = document.getElementById("stopButton");
-const startIcon = document.getElementById("startIcon");
-const stopIcon = document.getElementById("stopIcon");
-const circumference = 2 * Math.PI * 45;
-const videoBackground = document.getElementById("video-background");
-const mainContainer = document.getElementById("mainContainer");
-const seasonVideos ={
+let isRunning=false;
+const countdownCircle=document.querySelector(".countdown-circle");
+const countdownText=document.getElementById("countdown");
+const timeInput=document.getElementById("timeInput");
+const startButton=document.getElementById("startButton");
+const stopButton=document.getElementById("stopButton");
+const startIcon=document.getElementById("startIcon");
+const stopIcon=document.getElementById("stopIcon");
+const circumference=2*Math.PI*45;
+const videoBackground=document.getElementById("video-background");
+const mainContainer=document.getElementById("mainContainer");
+const seasonVideos={
   winter:
     "https://video.wixstatic.com/video/60eca0_29ea780c363b43888e81b9e09f0cc3cc/1080p/mp4/file.mp4",
   spring:
