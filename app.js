@@ -41,9 +41,9 @@ function changeSeason(season){
     icon.classList.remove("active");
     icon.style.color="";
   });
-  const activeIcon = document.getElementById(`${season}Icon`);
+  const activeIcon=document.getElementById(`${season}Icon`);
   activeIcon.classList.add("active");
-  activeIcon.style.color = seasonColors[season][2];
+  activeIcon.style.color=seasonColors[season][2];
 }
 function startCountdown(){
   const duration = parseInt(timeInput.value);
