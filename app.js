@@ -54,22 +54,22 @@ function startCountdown(){
     return;
   }
   if (!isRunning){
-    isRunning = true;
-    let timeLeft = duration;
+    isRunning=true;
+    let timeLeft=duration;
     updateCountdown(timeLeft, duration);
-    countdownInterval = setInterval(() =>{
+    countdownInterval=setInterval(()=>{
       timeLeft--;
-      if (timeLeft < 0){
+      if (timeLeft<0){
         stopCountdown();
         return;
       }
       updateCountdown(timeLeft, duration);
     }, 1000);
-    countdownCircle.style.animation = `moveGradient ${duration}s linear`;
-    countdownCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-    startButton.disabled = true;
-    stopButton.disabled = false;
-    timeInput.disabled = true;
+    countdownCircle.style.animation=`moveGradient ${duration}s linear`;
+    countdownCircle.style.strokeDasharray=`${circumference} ${circumference}`;
+    startButton.disabled=true;
+    stopButton.disabled=false;
+    timeInput.disabled=true;
     startIcon.classList.add("flipped");
   }
 }
