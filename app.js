@@ -96,28 +96,28 @@ function updateCountdown(timeLeft, duration){
   countdownCircle.style.strokeDashoffset=dashoffset;
 }
 function incrementTime(){
-  timeInput.value = (parseInt(timeInput.value) || 0) + 1;
+  timeInput.value=(parseInt(timeInput.value) || 0)+1;
 }
 function decrementTime(){
-  timeInput.value = Math.max((parseInt(timeInput.value) || 0) - 1, 1);
+  timeInput.value=Math.max((parseInt(timeInput.value) || 0)-1, 1);
 }
 function showTooltip(){
-  const tooltip = startButton.querySelector(".tooltip");
-  tooltip.style.visibility = "visible";
-  tooltip.style.opacity = "1";
-  setTimeout(() =>{
-    tooltip.style.visibility = "hidden";
-    tooltip.style.opacity = "0";
+  const tooltip=startButton.querySelector(".tooltip");
+  tooltip.style.visibility="visible";
+  tooltip.style.opacity="1";
+  setTimeout(()=>{
+    tooltip.style.visibility="hidden";
+    tooltip.style.opacity="0";
   }, 2000);
 }
-timeInput.addEventListener("input", () =>{
+timeInput.addEventListener("input",()=>{
   if (timeInput.value.trim()) {
-    startButton.querySelector(".tooltip").style.display = "none";
+    startButton.querySelector(".tooltip").style.display="none";
   } else{
-    startButton.querySelector(".tooltip").style.display = "block";
+    startButton.querySelector(".tooltip").style.display="block";
   }
 });
 changeSeason("winter");
 function resizeContainer(scale){
-  mainContainer.style.transform = `scale(${scale})`;
+  mainContainer.style.transform=`scale(${scale})`;
 }
