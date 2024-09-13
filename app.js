@@ -46,8 +46,8 @@ function changeSeason(season){
   activeIcon.style.color=seasonColors[season][2];
 }
 function startCountdown(){
-  const duration = parseInt(timeInput.value);
-  if (isNaN(duration) || duration <= 0){
+  const duration=parseInt(timeInput.value);
+  if (isNaN(duration) || duration<=0){
     if (!timeInput.value.trim()){
       showTooltip();
     }
